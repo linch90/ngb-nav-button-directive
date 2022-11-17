@@ -1,0 +1,47 @@
+# NgbNavButton
+
+A angular directive to put on the nav button.
+
+**Module**
+
+```typescript
+import { NgbNavButtonDirectiveModule } from '@linch90/ngb-nav-button-directive';
+```
+
+**Selector**
+
+_button[ngbNavButton]_
+
+# Example
+
+[Stackblitz](https://stackblitz.com/edit/ngb-nav-button-directive)
+
+```typescript
+<div class="mt-2">
+  <ul ngbNav #nav="ngbNav" class="nav-tabs">
+    <li ngbNavItem>
+      <div class="btn-group">
+        <button ngbNavButton>Nav Button 1</button>
+        <div class="btn-group" ngbDropdown>
+          <button class="btn dropdown-toggle-split" ngbDropdownToggle></button>
+          <div ngbDropdownMenu>
+            <button ngbDropdownItem>One</button>
+            <button ngbDropdownItem>Two</button>
+            <button ngbDropdownItem>Three</button>
+          </div>
+        </div>
+      </div>
+      <ng-template ngbNavContent>
+        <div>Hello Nav Content 1</div>
+      </ng-template>
+    </li>
+    <li ngbNavItem>
+      <button ngbNavButton>Nav Button 2</button>
+      <ng-template ngbNavContent>
+        <div>Hello Nav Content 2</div>
+      </ng-template>
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav"></div>
+</div>
+```
